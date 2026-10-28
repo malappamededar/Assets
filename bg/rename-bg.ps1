@@ -4,6 +4,6 @@ $files = Get-ChildItem -File | Where-Object { $_.Extension -eq '.jpg' } | Sort-O
 
 for ($i = 0; $i -lt 16; $i++) {
     if ($i -ge $files.Count) { break }
-    $newName = "bg$($i + 1).jpg"
+    $newName = "$($i + 1).jpg"
     Rename-Item -Path $files[$i].FullName -NewName $newName
 }
